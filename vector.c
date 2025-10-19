@@ -12,8 +12,7 @@
 #include "vectorMath.h"
 
 
-
-|int main(){
+int main(){
     vector list[11];
     int listPlace = 0;
     clear(list);
