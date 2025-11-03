@@ -2,12 +2,13 @@
  * Filename: vectorMath.c
  * Description: Holds the math and helper functions
  * Author: Charlie Lemerand
- * Date: 9/30/2025
- * Compile: gcc vector.c vectorMath.c -o vector
+ * Date: 10/31/2025
+ * Compile: make
 ******************************/
 
 #include "vectorMath.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 // Adds vectors a and b together and saves it to c
@@ -40,8 +41,8 @@ double Dot(vector* a, vector* b){
 }
 
 // Finds a vector with name and returns it's index
-int find(char name, vector* list){
-    for(int i = 0; i < 10; i++){
+int find(char name, vector* list, int size){
+    for(int i = 0; i < size; i++){
         if(list[i].name == name){
             return i;
         }
@@ -50,18 +51,23 @@ int find(char name, vector* list){
 }
 
 // clears every value in a list of vectors
-void clear(vector* list){
-    for(int i = 0; i < 11; i++){
+void clear(vector* list, int size){
+    for(int i = 0; i < size; i++){
         list[i].name = ' ';
         list[i].x = 0.0;
         list[i].y = 0.0;
         list[i].z = 0.0;
     }
+    return;
 }
 
 // prints out the name and values of every vector in the list
-void display(vector* list){
-    for(int i = 0; i < 10; i++){
+void display(vector* list, int size){
+    if(size == 0){
+        printf("No Stored vectors\n");
+        return;
+    }
+    for(int i = 0; i < size; i++){
         printf("    %c: %.2f %.2f %.2f\n", list[i].name, list[i].x, list[i].y, list[i].z);
     }
 }

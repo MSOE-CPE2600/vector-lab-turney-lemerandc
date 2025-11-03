@@ -2,8 +2,8 @@
  * Filename: vectorMath.h
  * Description: Holds the math and helper functions
  * Author: Charlie Lemerand
- * Date: 9/30/2025
- * Compile: gcc vector.c vectorMath.c -o vector
+ * Date: 10/31/2025
+ * Compile: make
 ******************************/
 
 // The main structure for vectors
@@ -27,10 +27,10 @@ void Scaler(vector* a, vector* b, double scale);
 double Dot(vector* a, vector* b);
 
 // Finds a vector with name and returns it's index
-int find(char name, vector* list);
+int find(char name, vector* list, int size);
 
 // clears every value in a list of vectors
-void clear(vector* list);
+void clear(vector* list, int size);
 
 // prints out the name and values of every vector in the list
-void display(vector* list);
+void display(vector* list, int size);
